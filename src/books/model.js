@@ -5,7 +5,7 @@ title: {
     type: String,
     required: true,
     unique: true,
-    },
+},
 author: {
     type: String,
     required: true,
@@ -14,6 +14,7 @@ genre: {
     type: String,
     required: true,
 },
+
 });
 
 const Book = mongoose.model("book", bookSchema);
