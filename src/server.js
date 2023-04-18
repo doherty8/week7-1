@@ -1,14 +1,15 @@
 require("dotenv").config();
 require("./db/connection");
-console.log(process.env.MONGO_URI);
+
 const express = require("express");
+
+const bookRouter = require("./books/routes");
+const Book = require("./books/model");
 
 const app = express();
 
 app.use(express.json());
 
-app.get("/books", (req, res) => {
-    res.send("Hello World");
-});
+app.use(bookRouter);
 
 app.listen(5001, () => console.log("Server is Listening"));
